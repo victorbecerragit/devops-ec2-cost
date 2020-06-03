@@ -11,7 +11,9 @@ For new project, select the latest instance architecture available on AWS, the n
 A Sample: Paris Region (not the more cheap EU region)  (less is better)
 
 T2-small - OnDemand x Month = $19.272000 monthly
+
 T3-small - OnDemand x Month = $17.228000 monthly
+
 T3a-small - OnDemand x Month = $15.476000 monthly >> the cheaper
 
 As you can see, the T3a-xxx instances are the most cheaper and provide similar performance than T3-xxx.
