@@ -1,19 +1,19 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: An AWS Serverless Specification template describing your function.
+Description: 'aws:states:opt-in'
 Resources:
-  StopEC2TAGGED:
+  EC2lambdastop:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
       CodeUri: .
-      Description: ''
+      Description: 'aws:states:opt-in'
       MemorySize: 128
-      Timeout: 179
-      Role: 'arn:aws:iam::748659484642:role/EC2_StopInstances'
+      Timeout: 240
+      Role: 'arn:aws:iam::618624782178:role/EC2_handleInstances'
       Events:
         Schedule1:
           Type: Schedule
           Properties:
-            Schedule: rate(7 minutes)
+            Schedule: cron(0 17 ? * MON-FRI *)

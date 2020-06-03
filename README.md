@@ -53,8 +53,9 @@ You will download 2 files:
 - one with the lambda_name.yaml (SAM template).
 - Second one a .zip with the lambda.py (function code).
 
-In m case I created initially 2 lambda function to stop/start  EC2 instances, these functions must be created on each region where they are needed.
-So, I opted to automate this with serverless and CF.
+In my case I created initially 2 lambda function to stop/start  EC2 instances, with a cloudwatch schedule to start at 9AM and stop at 6PM Mon-Fri.
+These functions must be created on each region where they are needed.
+The easy way to automate this is using serverless framework for AWS and CF (for home working, could be implemented this with TF instead of CFC ).
 
 - start_ec2/lambda_function.py
 - stop_ec2/lambda_function.py
@@ -78,14 +79,14 @@ pre-requisite:
         -rw-r--r-- 1 vittorio vittorio 553  3 giu 16.11 EC2-lambda-start.yaml
         -rw-r--r-- 1 vittorio vittorio 608  3 giu 16.20 output.yaml
 
-   $aws cloudformation package --template-file template.yml --output-template-file output.yaml \
+   $aws cloudformation package --template-file EC2-lambda-start.yaml --output-template-file output.yaml \
    --s3-bucket sam-deploy-lambda-serverless --profile <your-aws-profile>
 
 Uploading to 83b4d36693d0972fc4830dda933bceab  1898 / 1898.0  (100.00%)
 Successfully packaged artifacts and wrote output template to file output.yaml.
 Execute the following command to deploy the packaged template
 
-aws cloudformation deploy --template-file /home/vittorio/Desktop/deploy/moba/bitrock/Lambda-deploy-SAM/start_ec2/output.yaml --stack-name <YOUR STACK NAME>
+aws cloudformation deploy --template-file output.yaml --stack-name <YOUR STACK NAME>
 
 2- Follow the instructions from the above output to deploy the template.
    This will create a new template on CF services with the name invoked on *--stack-name* and will deploy the lambda function.

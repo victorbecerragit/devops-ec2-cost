@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: aws:states:opt-in
+Resources:
+  EC2lambdastop:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.7
+      CodeUri: s3://sam-deploy-lambda-serverless/c6c5c8835c8635351a850fd40e37b32a
+      Description: aws:states:opt-in
+      MemorySize: 128
+      Timeout: 240
+      Role: arn:aws:iam::618624782178:role/EC2_handleInstances
+      Events:
+        Schedule1:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0 17 ? * MON-FRI *)
