@@ -1,8 +1,9 @@
 
 AWS Cost optimization notes
 
-The ## section 1 ##, show general recommendation to optimize costs on AWS.
-The ## section 2 ##, show an implementation of scheduled environment with lambda function.
+The # section 1 #, show general recommendation to optimize costs on AWS.
+
+The # section 2 #, show an implementation of scheduled environment with lambda function.
 
 ## Section 1 ##
 For new project, select the latest instance architecture available on AWS, the new CPU instances type cost less than old ones.
@@ -55,7 +56,11 @@ You will download 2 files:
 In m case I created initially 2 lambda function to stop/start  EC2 instances, these functions must be created on each region where they are needed.
 So, I opted to automate this with serverless and CF.
 
-These steps show you how to deploy a lambda function by region on demand.
+- start_ec2/lambda_function.py
+- stop_ec2/lambda_function.py
+
+
+Follow hese steps to automate the deploy a lambda function to any region on demand.
 
 pre-requisite:
 - Lambda fuction
