@@ -83,13 +83,13 @@ pre-requisite:
         -rw-r--r-- 1 vittorio vittorio 608  3 giu 16.20 output.yaml
 
    $aws cloudformation package --template-file EC2-lambda-start.yaml --output-template-file output.yaml \
-   --s3-bucket sam-deploy-lambda-serverless --profile <your-aws-profile>
+   --s3-bucket sam-deploy-lambda-serverless --profile *your-aws-profile*
 
 Uploading to 83b4d36693d0972fc4830dda933bceab  1898 / 1898.0  (100.00%)
 Successfully packaged artifacts and wrote output template to file output.yaml.
 Execute the following command to deploy the packaged template
 
-aws cloudformation deploy --template-file output.yaml --stack-name <YOUR STACK NAME>
+aws cloudformation deploy --template-file output.yaml --stack-name *YOUR STACK NAME*
 
 2- Follow the instructions from the above output to deploy the template.
    This will create a new template on CF services with the name invoked on *--stack-name* and will deploy the lambda function.
@@ -97,7 +97,7 @@ aws cloudformation deploy --template-file output.yaml --stack-name <YOUR STACK N
    #Deploy the CF template, this will create the lambda function
 
    $aws cloudformation deploy --template-file output.yaml \
-    --stack-name stack-sam --profile <your-aws-profile> --region <wanted-region>
+    --stack-name stack-sam --profile *your-aws-profile* --region *your-region*
 
     Waiting for changeset to be created..
     Waiting for stack create/update to complete
