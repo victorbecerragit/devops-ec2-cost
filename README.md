@@ -55,7 +55,8 @@ You will download 2 files:
 
 In my case I created initially 2 lambda function to stop/start  EC2 instances, with a cloudwatch schedule to start at 9AM and stop at 6PM Mon-Fri.
 These functions must be created on each region where they are needed.
-The easy way to automate this is using serverless framework for AWS and CF (for home working, could be implemented this with TF instead of CFC ).
+The easy way to automate this is using serverless framework for AWS and CF 
+(Open to anyone that want to try implement this with TF instead of CFC ).
 
 - start_ec2/lambda_function.py
 - stop_ec2/lambda_function.py
