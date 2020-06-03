@@ -102,5 +102,5 @@ aws cloudformation deploy --template-file /home/vittorio/Desktop/deploy/moba/bit
 3- Go to Lambda Services on AWS and select the region that you invoked previously on step 2, and now, 
    you should see a new lambda function just created a seconds ago.
 
-The name of the new lambda function will be <stack-name-function-name-template-slackID>
+The name of the new lambda function will be " <stack-name-function-name-template-slackID> "
 
