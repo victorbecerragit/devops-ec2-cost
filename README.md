@@ -108,3 +108,6 @@ aws cloudformation deploy --template-file output.yaml --stack-name *YOUR STACK N
 
 The name of the new lambda function will be "stack-name-function-name-slackID"
 
+### If you want to do the same with Terraform ### 
+ here you go > https://github.com/victorbecerragit/terra-lambda
+ 
