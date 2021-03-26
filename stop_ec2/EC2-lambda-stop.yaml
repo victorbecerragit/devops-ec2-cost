@@ -11,7 +11,7 @@ Resources:
       Description: 'aws:states:opt-in'
       MemorySize: 128
       Timeout: 240
-      Role: 'arn:aws:iam::618624782178:role/EC2_handleInstances'
+      Role: 'arn:aws:iam::<your-role-ID>:role/EC2_handleInstances'
       Events:
         Schedule1:
           Type: Schedule
